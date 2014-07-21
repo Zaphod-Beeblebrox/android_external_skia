@@ -246,12 +246,9 @@ public:
         ComputeRowBytes() is called to compute the optimal value. This resets
         any pixel/colortable ownership, just like reset().
     */
-    bool setConfig(Config, int width, int height, size_t rowBytes, SkAlphaType);
+    void setConfig(Config, int width, int height, size_t rowBytes = 0);
 
-    bool setConfig(Config config, int width, int height, size_t rowBytes = 0) {
-        return this->setConfig(config, width, height, rowBytes,
-                               kPremul_SkAlphaType);
-    }
+    bool setConfig(Config, int width, int height, size_t rowBytes, SkAlphaType);
 
     bool setConfig(const SkImageInfo& info, size_t rowBytes = 0);
 

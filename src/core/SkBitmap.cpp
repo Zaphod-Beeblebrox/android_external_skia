@@ -296,6 +296,10 @@ extern "C" void _ZN8SkBitmap9setConfigENS_6ConfigEiii(SkBitmap *bitmap,
     bitmap->setConfig(c, width, height, (size_t) rowBytes);
 }
 
+void SkBitmap::setConfig(Config config, int width, int height, size_t rowBytes) {
+    this->setConfig(config, width, height, rowBytes, kPremul_SkAlphaType);
+}
+
 bool SkBitmap::setConfig(Config config, int width, int height, size_t rowBytes,
                          SkAlphaType alphaType) {
     if ((width | height) < 0) {
